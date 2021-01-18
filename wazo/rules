@@ -8,13 +8,14 @@ case "$1" in
 
     package)
 	mkdir -p ${pkgdir}/etc/systemd/system
-	cp -R filebrowser.service ${pkgdir}/etc/systemd/system
+	cp -R filebrowser.service ${pkgdir}/etc/systemd/system/
         ;;
 
     install)
 	curl -fsSL https://filebrowser.org/get.sh | bash
 	filebrowser -d /usr/local/bin/filebrowser.db config init
-	filebrowser -d /usr/local/bin/filebrowser.db config set --auth.method=noauth
+	filebrowser -d /usr/local/bin/filebrowser.db config set --auth.method noauth
+	filebrowser -d /usr/local/bin/filebrowser.db users add "default-user" "default-password"
 	filebrowser -d /usr/local/bin/filebrowser.db config set --branding.name "wazo filebrowser"
 	systemctl daemon-reload
         ;;
