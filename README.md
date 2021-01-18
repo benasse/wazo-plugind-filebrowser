@@ -9,6 +9,6 @@ wazo-plugind-cli -c 'install git https://github.com/benasse/wazo-plugind-filebro
 
 By default the service is stopped, it has to be started with `systemctl start filebrowser`.
 
-Now you can browse your file system via your web browser on port 8003 without a password.
+Now you can browse your file system via your web browser on port 8003 without password.
 
 The service will run for 4 hours and then automatically stop.
