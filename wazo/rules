@@ -23,6 +23,7 @@ case "$1" in
     uninstall)
 	rm -rf /usr/local/bin/filebrowser
 	rm -rf /usr/local/bin/filebrowser.db
+	rm -rf /etc/systemd/system/filebrowser.service
 	systemctl daemon-reload
         ;;
 
