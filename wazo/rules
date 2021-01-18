@@ -9,7 +9,6 @@ case "$1" in
     package)
 	mkdir -p ${pkgdir}/etc/systemd/system
 	cp -R filebrowser.service ${pkgdir}/etc/systemd/system
-	cp -R etc ${pkgdir}
         ;;
 
     install)
