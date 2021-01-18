@@ -1,0 +1,13 @@
+[Unit]
+Description=Filebrowser
+After=network-online.target
+
+[Service]
+User=root
+Group=root
+RuntimeMaxSec=14400
+
+ExecStart=/usr/local/bin/filebrowser -r / -a 0.0.0.0 -p 8003 -d /usr/local/bin/filebrowser.db
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,7 @@
+name: wazo-plugind-filebrowser
+namespace: potoo
+version: 0.0.1
+author: Benoît Stahl
+display_name: wazo-plugind-filebrowser
+description: This plugin install filebrowser for more information see: https://filebrowser.org
+homepage: https://github.com/benasse/wazo-plugind-filebrowser

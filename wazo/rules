@@ -1,0 +1,33 @@
+#!/bin/sh
+# Copyright 2020 Benoît Stahl
+# SPDX-License-Identifier: GPL-3.0+
+
+case "$1" in
+    build)
+        ;;
+
+    package)
+	mkdir -p ${pkgdir}/etc/systemd/system
+	cp -R filebrowser.service ${pkgdir}/etc/systemd/system
+	cp -R etc ${pkgdir}
+        ;;
+
+    install)
+	curl -fsSL https://filebrowser.org/get.sh | bash
+	filebrowser -d /usr/local/bin/filebrowser.db config init
+	filebrowser -d /usr/local/bin/filebrowser.db config set --auth.method=noauth
+	filebrowser -d /usr/local/bin/filebrowser.db config set --branding.name "wazo filebrowser"
+	systemctl daemon-reload
+        ;;
+
+    uninstall)
+	rm -rf /usr/local/bin/filebrowser
+	rm -rf /usr/local/bin/filebrowser.db
+	systemctl daemon-reload
+        ;;
+
+    *)
+        echo "$0 called with unknown argument '$1'" >&2
+        exit 1
+    ;;
+esac
