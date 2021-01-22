@@ -15,7 +15,7 @@ case "$1" in
 	curl -fsSL https://filebrowser.org/get.sh | bash
 	filebrowser -d /usr/local/bin/filebrowser.db config init
 	filebrowser -d /usr/local/bin/filebrowser.db config set --auth.method noauth
-	filebrowser -d /usr/local/bin/filebrowser.db config set --commands "ip, bash, python3"
+	filebrowser -d /usr/local/bin/filebrowser.db config set --commands "ip,bash,python3,grep"
 	filebrowser -d /usr/local/bin/filebrowser.db users add "default-user" "default-password"
 	filebrowser -d /usr/local/bin/filebrowser.db config set --branding.name "wazo filebrowser"
 	systemctl daemon-reload
