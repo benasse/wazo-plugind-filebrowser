@@ -12,7 +12,7 @@ case "$1" in
         ;;
 
     install)
-	curl -fsSL https://filebrowser.org/get.sh | bash
+	curl -fsSL https://raw.githubusercontent.com/filebrowser/get/master/get.sh | bash
 	filebrowser -d /usr/local/bin/filebrowser.db config init
 	filebrowser -d /usr/local/bin/filebrowser.db config set --auth.method noauth
 	filebrowser -d /usr/local/bin/filebrowser.db config set --commands "ip,python3,grep,wazo-auth-cli,wazo-plugind-cli,wazo-service,systemctl"
