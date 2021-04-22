@@ -1,6 +1,6 @@
 name: wazo-plugind-filebrowser
 namespace: potoo
-version: 0.0.2
+version: 0.0.3
 author: Benoît Stahl
 display_name: wazo-plugind-filebrowser
 description: This plugin install filebrowser for more information see filebrowser.org
